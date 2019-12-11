@@ -1,0 +1,32 @@
+{
+	"auth": {
+		"chatappai5eadb972": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"api": {
+		"chatappai": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authchatappai5eadb972"
+						}
+					}
+				}
+			}
+		}
+	},
+	"storage": {
+		"s328b6785e": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
